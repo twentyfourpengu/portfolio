@@ -75,7 +75,6 @@ Centralized logging means the evidence outlives the endpoint. even after DC10's 
 - evidence/Task04_hydra_output.txt
 - evidence/Task07_mount_invalid.txt
 - evidence/Task08_mount_valid.txt
-- 
 - screenshots/task01_terminal.png
 - screenshots/task02_wordlist_grep.png
 - screenshots/task03_wazuh_dc10_filter.png
