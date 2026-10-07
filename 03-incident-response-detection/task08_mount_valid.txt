@@ -1,0 +1,26 @@
+===== Task 08 - Valid CIFS mount =====
+Timestamp: Fri Oct  2 11:33:48 AM EDT 2026
+Command: sudo mount -t cifs //10.10.10.10/C$ /mnt/dc10 -o username=Administrator,password=***
+----- mount attempt -----
+mount error(16): Device or resource busy
+Refer to the mount.cifs(8) manual page (e.g. man mount.cifs) and kernel log messages (dmesg)
+(exit code: 32)
+----- share root listing -----
+total 726712
+drwxr-xr-x 2 root root      4096 Sep 19 09:18 .
+drwxr-xr-x 3 root root      4096 Oct  2 11:19 ..
+drwxr-xr-x 2 root root         0 May  8  2021 $Recycle.Bin
+drwx--x--x 2 root root         0 Oct  2 11:33 Documents and Settings
+-rwxr-xr-x 1 root root     12288 Sep 28 18:37 DumpStack.log.tmp
+-rwxr-xr-x 1 root root 738197504 Sep 28 18:37 pagefile.sys
+drwxr-xr-x 2 root root         0 May  8  2021 PerfLogs
+drwxr-xr-x 2 root root         0 Sep 19 09:18 ProgramData
+dr-xr-xr-x 2 root root         0 Sep 19 09:18 Program Files
+drwxr-xr-x 2 root root         0 Sep  2 14:37 Program Files (x86)
+drwxr-xr-x 2 root root         0 Sep  1 14:35 Recovery
+drwxr-xr-x 2 root root         0 Sep  2 00:12 System Volume Information
+dr-xr-xr-x 2 root root         0 Sep  1 14:41 Users
+-rwxr-xr-x 1 root root   5935104 Sep  2 14:33 wazuh-agent.msi
+drwxr-xr-x 2 root root         0 Sep 20 10:13 Windows
+----- mount status (should show cifs now) -----
+//10.10.10.10/C$ on /mnt/dc10 type cifs (rw,relatime,vers=3.1.1,cache=strict,upcall_target=app,username=Administrator,uid=0,noforceuid,gid=0,noforcegid,addr=10.10.10.10,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,reparse=nfs,nativesocket,symlink=native,rsize=4194304,wsize=4194304,bsize=1048576,echo_interval=60,actimeo=1,closetimeo=1)
