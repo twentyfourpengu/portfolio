@@ -1,4 +1,4 @@
-## Incident Detection Report  Lab 14
+## Incident Detection Report
 1. Analyst information
 Name: Lan Anh Chung
 Date: 01.10.26
