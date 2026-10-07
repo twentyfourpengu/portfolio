@@ -1,0 +1,7 @@
+
+--- File verification ---
+-rw-rw-r-- 1 kali kali 63K Sep 30 11:37 /home/kali/pentest_lab/payloads/shell.php
+/home/kali/payloads/shell.php: ASCII text, with very long lines (63984), with no line terminators
+
+--- PHP syntax check ---
+No syntax errors detected in /home/kali/pentest_lab/payloads/shell.php

