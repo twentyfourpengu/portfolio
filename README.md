@@ -139,24 +139,20 @@ domain controller, distinguishing host- vs. network-firewall behavior.
 .
 ├── README.md                          # this overview
 ├── 01-reconnaissance/
-│   ├── README.md                      # lab-specific description
-│   ├── report/                         # recon_report (.md / .pdf)
-│   ├── evidence/                       # target_info.txt, target_whois.txt, target_dns.txt
+│   ├── report.md                      # recon report                 
+│   ├── screenshots/                   # target_info.txt, target_whois.txt, target_dns.txt
 │   └── screenshots/
 ├── 02-penetration-testing/
-│   ├── README.md
-│   ├── report/
+│   ├── report.md
 │   ├── payloads/                       # special.php, shell.php
 │   ├── evidence/
 │   └── screenshots/
 ├── 03-incident-response-detection/
-│   ├── README.md
-│   ├── report/                         # ir_detection_report.md
+│   ├── report.md
 │   ├── evidence/                       # passlist.txt, hydra/mount output
 │   └── screenshots/
 └── 04-firewall-implementation/
-    ├── README.md
-    ├── report/                         # firewall_lab_report.docx
+    ├── report.md
     ├── commands/                       # ping output (before/after)
     └── screenshots/
 ```
