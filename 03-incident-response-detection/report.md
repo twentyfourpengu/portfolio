@@ -1,25 +1,25 @@
 ## Incident Detection Report
-1. Analyst information
+## 1. Analyst information
 Name: Lan Anh Chung
 Date: 01.10.26
 Cohort: 270726
 
-##2. Target information
+## 2. Target information
 Target host: DC-Server22
 Target IP: 10.10.10.10.
 Wazuh agent ID for DC10:  
 
-##3. Workstation identity
+## 3. Workstation identity
 Kali hostname: kali
 Kali IP: 10.10.10.128 
 Reachability to DC10 confirmed at: 15:04
 
-##4. Password list 
+## 4. Password list 
 Source dictionary: /ir_detection_lab
 Total lines: 25
 Line number of `Pa$$w0rd`: 1
 
-##5. Hydra brute-force attack (Task 4) 
+## 5. Hydra brute-force attack (Task 4) 
 Command issued: hydra -l Administrator -P passlist.txt smb2://10.10.10.10 | tee task04_hydra_output.txt
 Attempts before success: 1
 Time to first valid result: ~1
@@ -29,7 +29,7 @@ Recovered credentials: Administrator / Pa$$w0rd
 Rule 60122 — count, level, description: 30, 5, Logon Failure
 Rule 92652 — level, description, MITRE tactic, MITRE technique: 6, Successful Remote Logon Detected, Defense Evasion, Pass the Hash
 
-##7. MITRE mapping analyst note (Task 6) 
+## 7. MITRE mapping analyst note (Task 6) 
 One paragraph: does Wazuh's default technique mapping for Rule 92652 accurately describe what hydra did over RDP? Why or why not
 
 ## 8. Share-mount attempts (Tasks 7 and 8) 
