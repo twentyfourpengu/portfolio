@@ -1,0 +1,108 @@
+
+; <<>> DiG 9.20.27-2-Debian <<>> nmap.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43910
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;nmap.org.			IN	A
+
+;; ANSWER SECTION:
+nmap.org.		1372	IN	A	50.116.1.184
+
+;; Query time: 16 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1) (UDP)
+;; WHEN: Tue Sep 29 10:22:26 EDT 2026
+;; MSG SIZE  rcvd: 53
+
+
+; <<>> DiG 9.20.27-2-Debian <<>> scanme.nmap.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3781
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;scanme.nmap.org.		IN	A
+
+;; ANSWER SECTION:
+scanme.nmap.org.	1260	IN	A	45.33.32.156
+
+;; Query time: 24 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1) (UDP)
+;; WHEN: Tue Sep 29 10:22:45 EDT 2026
+;; MSG SIZE  rcvd: 60
+
+
+; <<>> DiG 9.20.27-2-Debian <<>> nmap.org MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36107
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;nmap.org.			IN	MX
+
+;; ANSWER SECTION:
+nmap.org.		3600	IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
+nmap.org.		3600	IN	MX	5 ALT1.ASPMX.L.GOOGLE.COM.
+nmap.org.		3600	IN	MX	10 ASPMX3.GOOGLEMAIL.COM.
+nmap.org.		3600	IN	MX	1 ASPMX.L.GOOGLE.COM.
+nmap.org.		3600	IN	MX	10 ASPMX2.GOOGLEMAIL.COM.
+
+;; Query time: 232 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1) (UDP)
+;; WHEN: Tue Sep 29 10:23:15 EDT 2026
+;; MSG SIZE  rcvd: 170
+
+
+; <<>> DiG 9.20.27-2-Debian <<>> nmap.org NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4629
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;nmap.org.			IN	NS
+
+;; ANSWER SECTION:
+nmap.org.		1810	IN	NS	ns5.linode.com.
+nmap.org.		1810	IN	NS	ns2.linode.com.
+nmap.org.		1810	IN	NS	ns3.linode.com.
+nmap.org.		1810	IN	NS	ns4.linode.com.
+nmap.org.		1810	IN	NS	ns1.linode.com.
+
+;; Query time: 0 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1) (UDP)
+;; WHEN: Tue Sep 29 10:23:26 EDT 2026
+;; MSG SIZE  rcvd: 137
+
+
+; <<>> DiG 9.20.27-2-Debian <<>> nmap.org SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 31362
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;nmap.org.			IN	SOA
+
+;; ANSWER SECTION:
+nmap.org.		3600	IN	SOA	ns1.linode.com. hostmaster.nmap.com. 2021000018 14400 14400 1209600 3600
+
+;; Query time: 496 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1) (UDP)
+;; WHEN: Tue Sep 29 10:23:39 EDT 2026
+;; MSG SIZE  rcvd: 103
+

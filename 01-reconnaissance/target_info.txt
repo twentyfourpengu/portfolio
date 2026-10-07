@@ -1,0 +1,9 @@
+PING google.com (142.250.146.138) 56(84) bytes of data.
+64 bytes from pu-in-f138.1e100.net (142.250.146.138): icmp_seq=1 ttl=107 time=19.1 ms
+64 bytes from pu-in-f138.1e100.net (142.250.146.138): icmp_seq=2 ttl=107 time=19.1 ms
+64 bytes from pu-in-f138.1e100.net (142.250.146.138): icmp_seq=3 ttl=107 time=19.2 ms
+64 bytes from pu-in-f138.1e100.net (142.250.146.138): icmp_seq=4 ttl=107 time=19.0 ms
+
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 4467ms
+rtt min/avg/max/mdev = 18.979/19.102/19.168/0.072 ms
