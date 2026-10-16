@@ -1,3 +1,4 @@
+(german documentation)
 # 🐶 LSB-Steganographie in Python
 
 Ein kleines Python-Projekt, das Textnachrichten unsichtbar in PNG-Bildern versteckt und wieder ausliest.
@@ -148,5 +149,4 @@ Kleiner Spoiler: Es ist an sich kein Geheimnis. 😉
 
 Ich bin aktuell auf der Suche nach einer neuen Stelle im IT-Bereich. Wenn dich das Projekt interessiert hat, freue ich mich über eine Nachricht:
 
-- LinkedIn: [Dein Profil](https://www.linkedin.com/in/DEIN-PROFIL)
-- E-Mail: deine.adresse@example.com
+- LinkedIn: [Dein Profil](https://www.linkedin.com/in/lan-anh-chung)
