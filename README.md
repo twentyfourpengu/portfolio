@@ -172,7 +172,6 @@ exfiltration channels and their detection limits.
 ---
 
 ---
----
 
 ## Skills Overview
 
@@ -212,7 +211,7 @@ exfiltration channels and their detection limits.
 └── 06-steganography/
     ├── readme.md
     ├── script/                          # stego.py vergleich.py
-    └── screenshots/
+    └── 
 ```
 
 ---
