@@ -22,7 +22,8 @@ against targets **explicitly approved for educational use**
 | 2 | [Penetration Testing](#2-penetration-testing--exploiting-a-web-app) | Exploitation (Red Team) | Web vulnerabilities, reverse shell | `curl`, `msfvenom`, `msfconsole`, DVWA |
 | 3 | [Incident Response – Detection](#3-incident-response--detection-with-wazuh) | Detection (Blue Team) | SIEM, MITRE ATT&CK | Wazuh, `hydra`, `mount.cifs` |
 | 4 | [Firewall Implementation](#4-firewall-implementation--host-hardening) | Hardening (Blue Team) | Host firewall, network rules | Windows Defender Firewall |
-
+| 5 | [Honeypot](#5-honeypot--deception-based-detection) | Detection (Blue Team) | Deception, connection logging | Pentbox 1.8, Kali Linux |
+| 6 | [Steganography](#6-steganography--hiding-data--steganalysis) | Exfiltration & Forensics | Data hiding, steganalysis | Python, Pillow (self-built LSB tool) |
 **End-to-end narrative:** first reconnoiter → then attack → then detect the attack in the
 SIEM → then harden the host so the attack no longer works.
 
@@ -123,6 +124,58 @@ domain controller, distinguishing host- vs. network-firewall behavior.
 
 ---
 
+
+## 5. Honeypot — Deception-Based Detection
+
+**Role:** Junior SOC Analyst · **Target:** Kali Linux honeypot (isolated lab)
+
+Setting up a decoy service to detect and log connection attempts — flipping the defender's
+perspective by making the attacker interact with a system whose only purpose is to be watched.
+
+**What I did:**
+- Deployed a **low-interaction honeypot** on port 443 using **Pentbox 1.8** on Kali Linux
+- Configured it manually: opened the port, set a fake response message (`Caught You!!`), and enabled logging of intrusion attempts to a log file
+- Simulated an attack by connecting to the Kali host over HTTPS (`https://<IP>`) from a browser
+- Confirmed the honeypot detected and logged the access — source IP, port, and timestamp (`INTRUSION ATTEMPT DETECTED!`)
+- Analyzed *why* the browser showed "Secure Connection Failed": port 443 expects a TLS handshake, but the honeypot is a plain TCP listener without encryption — yet the connection attempt was still established and recorded, which is exactly its purpose
+- Documented the difference between an open TCP port and a real service, and the value of honeypots as a network early-warning system
+
+**Skills gained:** honeypot deployment & configuration, connection logging and analysis,
+understanding low-interaction deception, TCP vs. TLS/service behavior, early-warning detection
+concepts.
+
+➡️ Details & report: [`05-honeypot/`](./05-honeypot/)
+
+---
+
+## 6. Steganography — Hiding Data & Steganalysis
+
+**Role:** Junior Digital Forensics Analyst · **Target:** self-built LSB tool, local test images
+
+Closing the attack-and-defense chain on the exfiltration side: implementing a data-hiding
+technique from scratch to understand it at the bit level, then switching to the forensic seat
+to **make the hidden data visible** — proving that "looks identical" is not the same as
+"is identical."
+
+**What I did:**
+- Explained the core idea and how it differs from cryptography: steganography hides the **existence** of a message, encryption only its **content** — and why the two are strongest combined (encrypt first, then hide)
+- **Built an LSB stego tool from scratch (`stego.py`, Python + Pillow):** encodes a text message into the least-significant bits of a PNG's RGB values and reads it back, using an end-marker to delimit the payload
+- Verified that the carrier image looked unchanged to the human eye, while the message was fully recoverable
+- Documented the practical constraints that make the technique work or fail: **PNG only** (lossy JPEG compression destroys the payload), carrier capacity (~3 bits per pixel), and why messengers that re-compress images break the hidden data
+- **Steganalysis (`vergleich.py`, Python + Pillow):** generated a difference image between the original and the stego carrier to expose exactly which pixels were modified, revealing the payload as a visible pattern
+- Discussed how to make the technique less detectable (busy photographic carriers instead of flat color, spreading bits across the whole image, using only the blue channel) and the statistical/visual tells a defender looks for
+
+**Skills gained:** LSB steganography fundamentals, bit-level data encoding, Python image
+processing (Pillow), basic steganalysis via difference imaging, reasoning about covert
+exfiltration channels and their detection limits.
+
+➡️ Details & report: [`06-steganography/`](./06-steganography/)
+
+---
+
+---
+---
+
 ## Skills Overview
 
 **Networking & Recon:** TCP/IP, ICMP, SMB/NetBIOS, DNS (A/MX/NS/CNAME/SOA), whois, OSINT
@@ -152,8 +205,15 @@ domain controller, distinguishing host- vs. network-firewall behavior.
 │   ├── evidence/                       # passlist.txt, hydra/mount output
 │   └── screenshots/
 └── 04-firewall-implementation/
-    ├── report.md
-    ├── commands/                       # ping output (before/after)
+│   ├── report.md
+│   ├── commands/                       # ping output (before/after)
+│   └── screenshots/
+├── 05-honeypot/
+│   ├── readme.md
+│   ├── screenshots/                      
+└── 06-steganography/
+    ├── readme.md
+    ├── script/                          # stego.py vergleich.py
     └── screenshots/
 ```
 
