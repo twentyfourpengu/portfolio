@@ -24,8 +24,6 @@ against targets **explicitly approved for educational use**
 | 4 | [Firewall Implementation](#4-firewall-implementation--host-hardening) | Hardening (Blue Team) | Host firewall, network rules | Windows Defender Firewall |
 | 5 | [Honeypot](#5-honeypot--deception-based-detection) | Detection (Blue Team) | Deception, connection logging | Pentbox 1.8, Kali Linux |
 | 6 | [Steganography](#6-steganography--hiding-data--steganalysis) | Exfiltration & Forensics | Data hiding, steganalysis | Python, Pillow (self-built LSB tool) |
-**End-to-end narrative:** first reconnoiter → then attack → then detect the attack in the
-SIEM → then harden the host so the attack no longer works.
 
 ---
 
