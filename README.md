@@ -266,8 +266,8 @@ vs. next-gen firewalls, AAA, MFA, WPA3-Enterprise, client-to-site VPN, OSI-based
 │   ├── readme.md
 │   ├── screenshots/                      
 └── 06-steganography/
-    ├── readme.md
-    └── script/                          # stego.py vergleich.py    
+│   ├── readme.md
+│   └── script/                          # stego.py vergleich.py    
 └── workshops/
     ├── risk-management-framework/
     │   ├── README.md
@@ -298,10 +298,6 @@ systems** — placeholder data comes from the lab instructions.
 ---
 
 ## About Me
-
-<!-- Customize this section: -->
-Entry-level cybersecurity professional focused on blue-team work (SOC/detection, hardening)
-with a solid grounding in offensive fundamentals.
 
 - 💼 LinkedIn: https://www.linkedin.com/in/lan-anh-chung/
 
