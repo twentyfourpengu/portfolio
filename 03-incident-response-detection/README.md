@@ -12,7 +12,7 @@ This lab shows how a SOC analyst detects suspicious activity using a centralized
 **Wazuh** (open-source SIEM/XDR), I observed how attacker actions on a monitored Windows server
 produce alerts in near real-time, and how those alerts map to the **MITRE ATT&CK** framework.
 
-I played both sides. From a Kali workstation I simulated two attacker behaviors — an RDP
+I played both sides. From a Kali workstation I simulated two attacker behaviors — an SMB2
 password-guessing attack with `hydra`, and attempts to mount a Windows admin share with both
 invalid and valid credentials — then pivoted to the Wazuh dashboard to confirm each alert fired,
 capture its Rule ID, and interpret the associated tactic and technique. Finally I cleared the
