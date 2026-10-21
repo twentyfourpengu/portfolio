@@ -25,6 +25,13 @@ against targets **explicitly approved for educational use**
 | 5 | [Honeypot](#5-honeypot--deception-based-detection) | Detection (Blue Team) | Deception, connection logging | Pentbox 1.8, Kali Linux |
 | 6 | [Steganography](#6-steganography--hiding-data--steganalysis) | Exfiltration & Forensics | Data hiding, steganalysis | Python, Pillow (self-built LSB tool) |
 
+### Workshops & design
+ 
+| # | Project | Phase | Focus | Format |
+|---|---------|-------|-------|--------|
+| 7 | [Cybersecurity Risk Management Framework](#7-cybersecurity-risk-management-framework) | Governance (GRC) | Risk cycle, scoring, treatment, acceptance | Presentation (PDF) |
+| 8 | [Network Infrastructure Design](#8-network-infrastructure-design-for-a-mid-sized-company) | Design / Architecture | Segmentation, firewalls, VPN, wireless | Presentation (PDF) |
+ 
 ---
 
 ## 1. Reconnaissance — Passive Information Gathering
@@ -170,7 +177,55 @@ exfiltration channels and their detection limits.
 ➡️ Details & report: [`06-steganography/`](./06-steganography/)
 
 ---
-
+## 7. Cybersecurity Risk Management Framework
+ 
+**Role:** Cybersecurity Analyst · **Context:** risk framework for a mid-sized organization
+ 
+A framework for handling cyber risk end to end, built around a continuous cycle
+**Identify → Assess → Treat → Accept → Monitor.** Each stage compares the available methods and
+makes an explicit, justified recommendation rather than just listing options.
+ 
+**What it covers:**
+- **Identification:** threat modeling vs. vulnerability assessment vs. incident review, compared by coverage of external, insider and human-error threats
+- **Assessment:** a 5×5 likelihood × impact model with euro-denominated impact criteria, plus qualitative risk matrix vs. quantitative **ALE / FAIR** (worked `ALE = SLE × ARO` example)
+- **Treatment:** mitigation vs. transfer, with avoid → mitigate → transfer → accept selection logic driven by tolerability and ROSI
+- **Acceptance:** score-band-based approval authority (risk owner up to executive escalation) with defined review cadences
+- **Monitoring:** automated (SIEM / IDS/IPS / EDR) vs. periodic assessments in a tiered hybrid model
+**Why it matters:** finding a vulnerability is only step one — the real questions are how
+urgent it is, what it would cost, how to treat it, and who signs off on the residual risk.
+This workshop shows I can frame technical findings in business-risk terms.
+ 
+**Skills gained:** risk cycle, likelihood/impact scoring, qualitative vs. quantitative risk
+analysis, ROSI, risk appetite & tolerance, residual risk, risk register, KRIs.
+ 
+➡️ Details & slides: [`workshops/risk-management-framework/`](./workshops/risk-management-framework/)
+ 
+---
+ 
+## 8. Network Infrastructure Design for a Mid-Sized Company
+ 
+**Role:** Network / Infrastructure Designer · **Context:** end-to-end design for a growing company
+ 
+A complete design for a company network supporting core services (web, email, VoIP, file
+sharing, databases), secure remote access, and room to grow — with each decision presented as a
+trade-off comparison and a clearly marked chosen option.
+ 
+**What it covers:**
+- **Architecture:** three-tier (core / distribution / access) vs. collapsed-core, chosen for scalability and redundancy
+- **Addressing & segmentation:** classless **VLSM** with function-based VLANs (servers, workstations, VoIP, wireless, VPN pool), sized to actual host needs
+- **Switching & interfaces:** 802.1Q VLANs, voice VLANs (LLDP-MED), port security with sticky MAC binding; copper vs. fiber per use case
+- **Security (defense in depth):** perimeter firewall + ACLs vs. next-gen firewall (DPI/IPS); local credentials vs. centralized **AAA (RADIUS/TACACS+) + MFA**
+- **Wireless & remote access:** WPA3-Enterprise and a client-to-site VPN (IPsec/WireGuard) vs. SSH-tunnel + RDP
+- **Troubleshooting:** a structured OSI-model method with the right tool per layer (ping/traceroute, Nmap, Wireshark)
+**Why it matters:** VLAN boundaries, ACLs, firewall placement, remote-access paths and wireless
+posture are all attack surface. Reasoning about that environment from the defender's side makes
+offensive work more targeted.
+ 
+**Skills gained:** three-tier switching, VLSM, 802.1Q VLANs, voice VLAN, port security, stateful
+vs. next-gen firewalls, AAA, MFA, WPA3-Enterprise, client-to-site VPN, OSI-based troubleshooting.
+ 
+➡️ Details & slides: [`workshops/network-infrastructure-design/`](./workshops/network-infrastructure-design/)
+ 
 ---
 
 ## Skills Overview
@@ -212,8 +267,14 @@ exfiltration channels and their detection limits.
 │   ├── screenshots/                      
 └── 06-steganography/
     ├── readme.md
-    ├── script/                          # stego.py vergleich.py
-    └── 
+    └── script/                          # stego.py vergleich.py    
+└── workshops/
+    ├── risk-management-framework/
+    │   ├── README.md
+    │   └── Cyber_Risk_Management_Framework.pdf
+    └── network-infrastructure-design/
+        ├── README.md
+        └── Network_Infrastructure_Design.pdf
 ```
 
 ---
