@@ -190,8 +190,10 @@ exfiltration channels and their detection limits.
 ├── README.md                          # this overview
 ├── 01-reconnaissance/
 │   ├── report.md                      # recon report                 
-│   ├── screenshots/                   # target_info.txt, target_whois.txt, target_dns.txt
-│   └── screenshots/
+│   ├── screenshots/
+│   ├── target_info.txt
+│   ├── target_whois.txt
+│   └── target_dns.txt
 ├── 02-penetration-testing/
 │   ├── report.md
 │   ├── payloads/                       # special.php, shell.php
